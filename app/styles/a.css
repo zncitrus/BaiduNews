@@ -1,0 +1,4 @@
+li{list-style: none;}
+.new{width:390px;height:  auto;}
+.new li{line-height: 27px;}
+.new li:nth-child(1){font-weight: bold; color: red;}

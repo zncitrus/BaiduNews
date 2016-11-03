@@ -1,0 +1,49 @@
+<input type="text" class="form-control" placeholder="name:" ng-model="adddata.title">
+<button type="submit" class="form-control" ng-click="add(x)" style="margin-top: 20px;">append</button>
+
+<div class="table-responsive">
+   <table class="table table-bordered">
+   <thead>
+     <tr>
+       <th>News</th>
+       <th>Edit</th>
+       <th>Delete</th>
+     </tr>
+   </thead>
+   <tbody>
+     <tr  ng-repeat="x in data">
+      <td>{{x.title}}</td>
+      <td><button class="btn btn-info" href="#" data-toggle="modal" data-target="#myModal" ng-click="edit(x)"><span class="glyphicon glyphicon-edit"></span> Edit</button></td>
+      <td><button class="btn btn-warning" href="#" ng-click="del(x)"><span class="glyphicon glyphicon-remove"></span> Delete</button></td>
+  </tr>
+   </tbody>
+ </table>
+</div>
+
+<!-- Button trigger modal -->
+
+
+<!-- Modal -->
+<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h4 class="modal-title" id="myModalLabel">编辑信息</h4>
+      </div>
+      <div class="modal-body">
+        <form role="form">
+			<div class="form-group">
+				<label for="exampleInputEmail1">Name：</label>
+				<input ng-model="edit.name" type="text" class="form-control" id="exampleInputEmail1" placeholder="请输入新闻">
+			</div>
+			
+		</form>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal">关闭</button>
+        <button type="button" class="btn btn-primary" data-dismiss="modal" ng-click="save()">保存</button>
+      </div>
+    </div>
+  </div>
+</div>
+
